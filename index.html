@@ -1,0 +1,142 @@
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="shortcut icon" href="logo_cute.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>imshy</title>
+    <style>
+        body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #fccff2;
+}
+
+.container {
+    text-align: center;
+    position: relative;
+}
+
+img {
+    height: 400px;
+    width: 600px;
+    margin-bottom: 20px;
+    animation: glow-animation 1.5s infinite alternate, move-animation 5s infinite linear;
+}
+
+@keyframes glow-animation {
+    from {
+        filter: brightness(1);
+    }
+    to {
+        filter: brightness(1.5);
+    }
+}
+
+@keyframes move-animation {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+    25% {
+        transform: translateX(20px) translateY(-20px);
+    }
+    50% {
+        transform: translateX(0) translateY(-20px);
+    }
+    75% {
+        transform: translateX(-20px) translateY(0);
+    }
+    100% {
+        transform: translateX(0) translateY(0);
+    }
+}
+
+.question {
+    color: #c09fec;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+button {
+    background-color: #fda8f6;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 13px;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+button:hover {
+    background-color: #ff00aa;
+}
+
+.link-button {
+    font-style: italic;
+    display: inline-block;
+    padding: 10px 10px;
+    font-size: 30px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    color: #faa6e8;
+    background-color: transparent;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.link-button:hover {
+    background-color: #ff00aa;
+    color: #ffffff;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="hugs.gif" alt="gif">
+        <h1 class="question">sending virtual hug, takecare always! </h1>
+        <div class="buttons">
+            <button class="yes-btn">Thank you!</button>
+            <button class="no-btn">No Thanks!</button>
+            <br>
+            <br>
+            
+    
+    <audio controls autoplay loop preload="auto">
+      <source src="SINING.mp3" type="audio/mpeg">
+      <source src="SINING.mp3" type="audio/mav">
+      Your browser does not support the audio element.
+    
+    </audio>
+    
+    
+    
+        </div>
+    </div>
+    
+    <script>
+        const container = document.querySelector('.container');
+        const question = document.querySelector('.question');
+        const noBtn = document.querySelector('.no-btn');
+
+        document.querySelector('.yes-btn').addEventListener('click', () => {
+            question.innerHTML = '<a href="flower.html" class="link-button">u want flowers? (click)</a>';
+        });
+
+        noBtn.addEventListener('mouseover', () => {
+            const containerRect = container.getBoundingClientRect();
+            const noBtnRect = noBtn.getBoundingClientRect();
+            const i = Math.random() * (containerRect.width - noBtnRect.width);
+            const j = Math.random() * (containerRect.height - noBtnRect.height);
+            noBtn.style.position = 'absolute';
+            noBtn.style.left = i + 'px';
+            noBtn.style.top = j + 'px';
+        });
+    </script>
+
+    
+
+</body></html>
